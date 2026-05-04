@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=DM+Sans:wght@300;400;500&display=swap');
+
+/* ─────────────────────────────────────────────
+   Tout est scopé sous .th-page
+   → aucun impact sur le reste de l'application
+───────────────────────────────────────────── */
+
+.th-page {
+  --clr-bg: #0f0f0f;
+  --clr-surface: #181818;
+  --clr-surface-alt: #1e1e1e;
+  --clr-border: #2a2a2a;
+  --clr-accent: #c8102e;
+  --clr-accent-glow: rgba(200, 16, 46, 0.2);
+  --clr-text-primary: #f0ece4;
+  --clr-text-muted: #7a7a7a;
+  --clr-success: #1a7a4a;
+  --ff-display: 'Cormorant Garamond', serif;
+  --ff-body: 'DM Sans', sans-serif;
+  --radius: 4px;
+  --transition: 0.22s ease;
+
+  min-height: 100vh;
+  background-color: var(--clr-bg);
+  background-image:
+    radial-gradient(ellipse 50% 40% at 80% 5%, rgba(200, 16, 46, 0.07) 0%, transparent 70%);
+  font-family: var(--ff-body);
+  color: var(--clr-text-primary);
+}
+
+/* ── En-tête ── */
+.th-page .th-header {
+  margin-bottom: 2.5rem;
+}
+
+.th-page .th-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.th-page .th-eyebrow::before {
+  content: '';
+  display: block;
+  width: 28px;
+  height: 1px;
+  background: var(--clr-accent);
+}
+
+.th-page .th-eyebrow span {
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--clr-accent);
+}
+
+.th-page .th-title {
+  font-family: var(--ff-display);
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 300;
+  line-height: 1.1;
+  color: var(--clr-text-primary);
+  margin: 0;
+}
+
+.th-page .th-title em {
+  font-style: italic;
+  color: var(--clr-accent);
+}
+
+/* ── Alert ── */
+.th-page .th-alert {
+  background: rgba(200, 16, 46, 0.1) !important;
+  border: 1px solid rgba(200, 16, 46, 0.3) !important;
+  color: #f0a0a8 !important;
+  border-radius: var(--radius) !important;
+  font-size: 0.875rem;
+}
+
+/* ── Table wrapper ── */
+.th-page .th-table-wrapper {
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+.th-page .th-table-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--clr-accent), transparent);
+  opacity: 0.5;
+  z-index: 1;
+}
+
+/* ── Table Bootstrap écrasée ── */
+.th-page .th-table {
+  margin: 0 !important;
+  border-collapse: collapse !important;
+  width: 100%;
+  font-size: 0.875rem;
+}
+
+/* thead */
+.th-page .th-table thead tr {
+  background: var(--clr-surface) !important;
+  border-bottom: 1px solid var(--clr-border) !important;
+}
+
+.th-page .th-table thead th {
+  background: transparent !important;
+  border: none !important;
+  color: var(--clr-text-muted) !important;
+  font-family: var(--ff-body) !important;
+  font-size: 0.68rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.15em !important;
+  text-transform: uppercase !important;
+  padding: 1rem 1.25rem !important;
+  white-space: nowrap;
+}
+
+/* tbody rows */
+.th-page .th-table tbody tr {
+  background: var(--clr-surface) !important;
+  border-bottom: 1px solid var(--clr-border) !important;
+  transition: background var(--transition);
+}
+
+.th-page .th-table tbody tr:last-child {
+  border-bottom: none !important;
+}
+
+.th-page .th-table tbody tr:nth-child(even) {
+  background: var(--clr-surface-alt) !important;
+}
+
+.th-page .th-table tbody tr:hover {
+  background: rgba(200, 16, 46, 0.06) !important;
+}
+
+.th-page .th-table tbody td {
+  background: transparent !important;
+  border: none !important;
+  color: var(--clr-text-primary) !important;
+  font-family: var(--ff-body) !important;
+  padding: 1rem 1.25rem !important;
+  vertical-align: middle !important;
+}
+
+/* ── Cellules spéciales ── */
+.th-page .th-property-name {
+  font-weight: 500 !important;
+  color: #e8e2d8 !important;
+}
+
+.th-page .th-price {
+  font-variant-numeric: tabular-nums;
+  font-weight: 500 !important;
+}
+
+.th-page .th-currency {
+  font-size: 0.72rem;
+  color: var(--clr-text-muted);
+  margin-left: 2px;
+}
+
+.th-page .th-dash {
+  color: var(--clr-text-muted);
+}
+
+/* ── Badges Bootstrap écrasés ── */
+.th-page .th-badge {
+  font-family: var(--ff-body) !important;
+  font-size: 0.65rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase !important;
+  padding: 0.35em 0.7em !important;
+  border-radius: 2px !important;
+}
+
+.th-page .badge.bg-danger {
+  background: rgba(200, 16, 46, 0.15) !important;
+  color: #f07080 !important;
+  border: 1px solid rgba(200, 16, 46, 0.35) !important;
+}
+
+.th-page .badge.bg-success {
+  background: rgba(26, 122, 74, 0.15) !important;
+  color: #5ecf8a !important;
+  border: 1px solid rgba(26, 122, 74, 0.35) !important;
+}
+
+/* ── État vide ── */
+.th-page .th-empty {
+  text-align: center !important;
+  padding: 3rem !important;
+}
+
+.th-page .th-empty-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--clr-text-muted);
+}
+
+.th-page .th-empty-icon {
+  font-size: 2rem;
+  opacity: 0.5;
+}
+
+.th-page .th-empty-inner p {
+  margin: 0;
+  font-size: 0.875rem;
+  letter-spacing: 0.05em;
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  .th-page .th-table-wrapper {
+    overflow-x: auto;
+  }
+
+  .th-page .th-table {
+    min-width: 520px;
+  }
+}

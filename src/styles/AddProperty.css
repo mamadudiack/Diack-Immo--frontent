@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap');
+
+.add-property-page {
+  display: flex;
+  min-height: 100vh;
+  background: #111;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.add-property-main {
+  flex: 1;
+  padding: 2.5rem 2rem;
+  overflow-y: auto;
+}
+
+.add-property-wrap {
+  max-width: 580px;
+}
+
+/* header */
+.add-property-eyebrow {
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #c8a050;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.add-property-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  font-weight: 400;
+  color: #f0ece3;
+  margin: 0;
+}
+
+.add-property-divider {
+  width: 40px;
+  height: 1.5px;
+  background: #c8a050;
+  border-radius: 2px;
+  margin-top: 14px;
+  margin-bottom: 2rem;
+}
+
+/* alert */
+.add-property-alert {
+  padding: 11px 16px;
+  border-radius: 10px;
+  font-size: 13px;
+  margin-bottom: 1.5rem;
+}
+
+.add-property-alert--success {
+  background: rgba(50, 120, 80, 0.15);
+  color: #5db87a;
+  border: 0.5px solid #3a7a52;
+}
+
+.add-property-alert--danger {
+  background: rgba(180, 60, 60, 0.15);
+  color: #f4a0a0;
+  border: 0.5px solid #7b1f1f;
+}
+
+/* form */
+.add-property-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.form-row-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.add-property-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.add-property-label {
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #555;
+  font-weight: 500;
+}
+
+.add-property-input,
+.add-property-select,
+.add-property-textarea {
+  background: #111;
+  border: 0.5px solid #333;
+  border-radius: 10px;
+  padding: 12px 16px;
+  color: #f0ece3;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  outline: none;
+  transition: border-color 0.2s, background 0.2s;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.add-property-input:focus,
+.add-property-select:focus,
+.add-property-textarea:focus {
+  border-color: #c8a050;
+  background: #161616;
+}
+
+.add-property-input::placeholder,
+.add-property-textarea::placeholder {
+  color: #444;
+}
+
+.add-property-input:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.add-property-select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23555' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 36px;
+  cursor: pointer;
+}
+
+.add-property-select option {
+  background: #1a1a1a;
+  color: #f0ece3;
+}
+
+.add-property-textarea {
+  resize: none;
+  height: 120px;
+  line-height: 1.7;
+  background: #252320;
+  border-color: #4a3f28;
+}
+
+.add-property-textarea:focus {
+  background: #2c2820;
+  border-color: #c8a050;
+}
+
+/* image upload */
+.add-property-file-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #1a1a1a;
+  border: 0.5px dashed #3a3a3a;
+  border-radius: 12px;
+  padding: 20px;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+  color: #555;
+  font-size: 13px;
+}
+
+.add-property-file-label:hover {
+  border-color: #c8a050;
+  background: #1f1d18;
+  color: #c8a050;
+}
+
+.add-property-file-label input {
+  display: none;
+}
+
+.add-property-file-icon {
+  font-size: 20px;
+  opacity: 0.6;
+}
+
+.add-property-preview {
+  margin-top: 12px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 0.5px solid #2a2a2a;
+}
+
+.add-property-preview img {
+  width: 100%;
+  max-height: 280px;
+  object-fit: cover;
+  display: block;
+}
+
+/* submit */
+.add-property-submit {
+  width: 100%;
+  padding: 13px;
+  background: #c8a050;
+  color: #111;
+  border: none;
+  border-radius: 10px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s, opacity 0.2s;
+  margin-top: 0.5rem;
+}
+
+.add-property-submit:hover:not(:disabled) {
+  background: #d4ad5e;
+}
+
+.add-property-submit:active:not(:disabled) {
+  transform: scale(0.99);
+}
+
+.add-property-submit:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}

@@ -1,0 +1,410 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=DM+Sans:wght@300;400;500&display=swap');
+
+/* ══════════════════════════════════════════
+   NAVBAR
+══════════════════════════════════════════ */
+.nb {
+  font-family: 'DM Sans', sans-serif;
+  background: linear-gradient(135deg, #1a1209 0%, #2d1f0e 60%, #3a2810 100%);
+  border-bottom: 1px solid rgba(200, 169, 106, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2.5rem;
+  height: 68px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: box-shadow 0.3s ease;
+}
+
+/* Filet doré en haut */
+.nb::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #c8a96a 30%,
+    #e8c87a 50%,
+    #c8a96a 70%,
+    transparent
+  );
+}
+
+.nb--scrolled {
+  box-shadow: 0 6px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* ══════════════════════════════════════════
+   LOGO
+══════════════════════════════════════════ */
+.nb__logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.nb__logo-img {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1.5px solid #c8a96a;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.nb__logo-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.nb__brand {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.nb__brand-main {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 19px;
+  font-weight: 600;
+  color: #c8a96a;
+  letter-spacing: 0.08em;
+}
+
+.nb__brand-sub {
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  color: rgba(200, 169, 106, 0.45);
+  text-transform: uppercase;
+  margin-top: 3px;
+}
+
+/* ══════════════════════════════════════════
+   NAVIGATION CENTRALE
+══════════════════════════════════════════ */
+.nb__nav ul {
+  display: flex;
+  gap: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nb__nav a {
+  display: block;
+  padding: 0 18px;
+  height: 68px;
+  line-height: 68px;
+  font-size: 12.5px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  color: rgba(245, 235, 210, 0.65);
+  text-decoration: none;
+  position: relative;
+  transition: color 0.25s ease;
+}
+
+/* Soulignement doré animé */
+.nb__nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  right: 50%;
+  height: 2px;
+  background: #c8a96a;
+  transition: left 0.25s ease, right 0.25s ease;
+}
+
+.nb__nav a:hover {
+  color: #e8c87a;
+}
+
+.nb__nav a:hover::after {
+  left: 18px;
+  right: 18px;
+}
+
+.nb__nav a.active {
+  color: #c8a96a;
+}
+
+.nb__nav a.active::after {
+  left: 18px;
+  right: 18px;
+}
+
+/* ══════════════════════════════════════════
+   ZONE DROITE
+══════════════════════════════════════════ */
+.nb__right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-shrink: 0;
+}
+
+/* ── Bouton connexion (visiteur) ── */
+.nb__btn-login {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid rgba(200, 169, 106, 0.4);
+  color: rgba(245, 235, 210, 0.78);
+  padding: 0 18px;
+  height: 34px;
+  border-radius: 2px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+
+.nb__btn-login:hover {
+  background: rgba(200, 169, 106, 0.1);
+  border-color: #c8a96a;
+  color: #c8a96a;
+}
+
+/* ══════════════════════════════════════════
+   PROFIL — TRIGGER
+══════════════════════════════════════════ */
+.nb__profile {
+  position: relative;
+}
+
+.nb__trigger {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  padding: 5px 10px 5px 5px;
+  border-radius: 30px;
+  border: 1px solid rgba(200, 169, 106, 0.3);
+  background: none;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.nb__trigger:hover,
+.nb__trigger--open {
+  background: rgba(200, 169, 106, 0.09);
+  border-color: rgba(200, 169, 106, 0.7);
+}
+
+/* Avatar initiales */
+.nb__avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #c8a96a;
+  color: #1a1209;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 13px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Avatar admin : violet/indigo */
+.nb__avatar--admin {
+  background: linear-gradient(135deg, #7c3aed, #a78bfa);
+  color: #fff;
+}
+
+.nb__trigger-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+}
+
+.nb__trigger-name {
+  font-size: 12.5px;
+  color: rgba(245, 235, 210, 0.82);
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  line-height: 1;
+}
+
+.nb__trigger-badge {
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #a78bfa;
+  line-height: 1;
+}
+
+/* ══════════════════════════════════════════
+   PROFIL — DROPDOWN
+══════════════════════════════════════════ */
+.nb__dropdown {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  width: 228px;
+  background: #231708;
+  border: 1px solid rgba(200, 169, 106, 0.22);
+  border-radius: 12px;
+  overflow: hidden;
+  transform-origin: top right;
+  transform: scale(0.9) translateY(-8px);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.22s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.18s ease;
+  z-index: 200;
+}
+
+.nb__dropdown--open {
+  transform: scale(1) translateY(0);
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* En-tête */
+.nb__dd-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 16px 14px;
+  border-bottom: 1px solid rgba(200, 169, 106, 0.14);
+}
+
+.nb__dd-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #c8a96a, #e8c87a);
+  color: #1a1209;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 17px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid rgba(200, 169, 106, 0.3);
+  flex-shrink: 0;
+}
+
+.nb__dd-avatar--admin {
+  background: linear-gradient(135deg, #7c3aed, #a78bfa);
+  color: #fff;
+  border-color: rgba(167, 139, 250, 0.4);
+}
+
+.nb__dd-name {
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #e8d8b0;
+  letter-spacing: 0.02em;
+  margin: 0;
+}
+
+.nb__dd-role {
+  font-size: 10.5px;
+  color: rgba(200, 169, 106, 0.5);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin: 3px 0 0;
+}
+
+/* Items menu */
+.nb__dd-menu {
+  padding: 6px;
+}
+
+.nb__dd-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: rgba(245, 235, 210, 0.7);
+  font-size: 13px;
+  letter-spacing: 0.01em;
+  transition: background 0.15s, color 0.15s;
+}
+
+.nb__dd-item svg {
+  flex-shrink: 0;
+  stroke: rgba(200, 169, 106, 0.45);
+  transition: stroke 0.15s;
+}
+
+.nb__dd-item:hover {
+  background: rgba(200, 169, 106, 0.09);
+  color: #e8c87a;
+}
+
+.nb__dd-item:hover svg {
+  stroke: #c8a96a;
+}
+
+/* Item admin (violet) */
+.nb__dd-item--admin {
+  color: rgba(196, 181, 253, 0.7);
+}
+
+.nb__dd-item--admin svg {
+  stroke: rgba(167, 139, 250, 0.5);
+}
+
+.nb__dd-item--admin:hover {
+  background: rgba(124, 58, 237, 0.1);
+  color: #c4b5fd;
+}
+
+.nb__dd-item--admin:hover svg {
+  stroke: #c4b5fd;
+}
+
+/* Séparateur */
+.nb__dd-sep {
+  height: 1px;
+  background: rgba(200, 169, 106, 0.12);
+  margin: 4px 8px;
+}
+
+/* Bouton déconnexion */
+.nb__dd-logout {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 9px 12px;
+  border-radius: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: rgba(240, 149, 149, 0.65);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.01em;
+  transition: background 0.15s, color 0.15s;
+}
+
+.nb__dd-logout svg {
+  flex-shrink: 0;
+  stroke: rgba(240, 149, 149, 0.45);
+  transition: stroke 0.15s;
+}
+
+.nb__dd-logout:hover {
+  background: rgba(226, 75, 74, 0.12);
+  color: #f09595;
+}
+
+.nb__dd-logout:hover svg {
+  stroke: #f09595;
+}
