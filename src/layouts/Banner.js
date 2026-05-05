@@ -180,6 +180,58 @@ const Banner = () => {
           writing-mode: vertical-rl;
           transform: rotate(180deg);
         }
+
+        @media (max-width: 900px) {
+          .profile-banner {
+            height: 60vh;
+          }
+
+          .profile-banner__content {
+            left: 8%;
+            top: 45%;
+            max-width: 420px;
+          }
+
+          .profile-banner__badge {
+            right: 24px;
+            bottom: 24px;
+          }
+        }
+
+        @media (max-width: 640px) {
+          .profile-banner {
+            height: 52vh;
+          }
+
+          .profile-banner__line {
+            display: none;
+          }
+
+          .profile-banner__content {
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 92%;
+            padding: 0 1rem;
+            text-align: center;
+          }
+
+          .profile-banner__btn-inner {
+            width: 100%;
+            justify-content: center;
+            padding: 12px 18px;
+          }
+
+          .profile-banner__title {
+            font-size: clamp(2rem, 7vw, 2.8rem);
+          }
+
+          .profile-banner__badge {
+            position: static;
+            transform: none;
+            writing-mode: horizontal-tb;
+            margin: 1rem auto 0;
+          }
+        }
       `}</style>
 
       <div className="profile-banner">

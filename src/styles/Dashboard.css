@@ -110,3 +110,16 @@
   background: #2a1a1a;
   color: #f4a0a0;
 }
+@media (max-width: 900px) {
+  .dashboard-page {
+    flex-direction: column;
+  }
+
+  .dashboard-main {
+    padding: 1.5rem 1rem;
+  }
+
+  .dashboard-grid {
+    gap: 1rem;
+  }
+}

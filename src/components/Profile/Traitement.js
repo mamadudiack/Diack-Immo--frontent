@@ -226,7 +226,7 @@ const CreateTraitement = ({ propertyId, propertyPrice }) => {
                   ? " Bien non disponible"
                   : alreadyRequested
                   ? " Déjà demandé"
-                  : "Procéder au paiement →"}
+                  : "valider →"}
               </Button>
             </div>
 

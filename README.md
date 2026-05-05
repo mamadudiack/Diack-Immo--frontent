@@ -2,6 +2,13 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Backend configuration
+
+- Local development: use `client/.env` with `REACT_APP_API_URL=http://localhost:5010/api`
+- Production deployment: use `client/.env.production` or Vercel environment variable `REACT_APP_API_URL=https://diack-immo-backend.onrender.com/api`
+
+You can also copy `client/.env.example` to `client/.env` to start local development.
+
 ## Available Scripts
 
 In the project directory, you can run:

@@ -4,6 +4,7 @@ import { API_URL } from "../../services/config";
 import { Container, Table, Badge, Alert } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import "./TransactionsHistory.css";
+import NavBar from "../../layouts/NavBar";
 
 const TransactionsHistory = () => {
   const [transactions, setTransactions] = useState([]);
@@ -35,7 +36,9 @@ const TransactionsHistory = () => {
   }, [navigate]);
 
   return (
+    <div>
     <div className="th-page">
+        <NavBar />
       <Container className="mt-5">
 
         <div className="th-header">
@@ -161,6 +164,7 @@ const TransactionsHistory = () => {
 
       </Container>
     </div>
+     </div>
   );
 };
 

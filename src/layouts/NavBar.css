@@ -151,6 +151,62 @@
   flex-shrink: 0;
 }
 
+.nb__menu-toggle {
+  display: none;
+  border: none;
+  background: transparent;
+  color: rgba(245, 235, 210, 0.95);
+  cursor: pointer;
+  width: 38px;
+  height: 38px;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.nb__menu-icon {
+  position: relative;
+  display: inline-block;
+  width: 22px;
+  height: 2px;
+  background: currentColor;
+  border-radius: 999px;
+}
+
+.nb__menu-icon::before,
+.nb__menu-icon::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 22px;
+  height: 2px;
+  background: currentColor;
+  border-radius: 999px;
+  transition: transform 0.25s ease, top 0.25s ease, opacity 0.25s ease;
+}
+
+.nb__menu-icon::before {
+  top: -7px;
+}
+
+.nb__menu-icon::after {
+  top: 7px;
+}
+
+.nb__menu-toggle--open .nb__menu-icon {
+  background: transparent;
+}
+
+.nb__menu-toggle--open .nb__menu-icon::before {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+.nb__menu-toggle--open .nb__menu-icon::after {
+  transform: rotate(-45deg);
+  top: 0;
+}
+
 /* ── Bouton connexion (visiteur) ── */
 .nb__btn-login {
   display: flex;
@@ -407,4 +463,106 @@
 
 .nb__dd-logout:hover svg {
   stroke: #f09595;
+}
+
+@media (max-width: 900px) {
+  .nb {
+    flex-wrap: wrap;
+    padding: 0.85rem 1.25rem;
+  }
+
+  .nb__menu-toggle {
+    display: inline-flex;
+  }
+
+  .nb__nav {
+    order: 2;
+    position: absolute;
+    top: 68px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background: linear-gradient(180deg, rgba(26, 18, 9, 0.98), rgba(26, 18, 9, 0.97));
+    border-bottom: 1px solid rgba(200, 169, 106, 0.22);
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: max-height 0.25s ease, opacity 0.25s ease;
+    z-index: 90;
+  }
+
+  .nb__nav--open {
+    max-height: 260px;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .nb__nav ul {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .nb__nav a {
+    padding: 0.75rem 1rem;
+    height: auto;
+    line-height: 1.4;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .nb__nav a:first-child {
+    border-top: none;
+  }
+
+  .nb__right {
+    order: 3;
+    width: 100%;
+    justify-content: flex-end;
+    margin-top: 0.55rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .nb {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.85rem;
+  }
+
+  .nb__logo {
+    margin-bottom: 0.5rem;
+  }
+
+  .nb__nav {
+    order: 3;
+  }
+
+  .nb__nav ul {
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .nb__nav a {
+    width: 100%;
+    padding: 0.85rem 1rem;
+  }
+
+  .nb__right {
+    order: 2;
+    justify-content: space-between;
+  }
+
+  .nb__btn-login,
+  .nb__trigger {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .nb__trigger {
+    padding: 0.7rem 0.85rem;
+  }
+
+  .nb__trigger-info {
+    display: none;
+  }
 }
