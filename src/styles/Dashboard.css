@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap');
+
+.dashboard-page {
+  display: flex;
+  min-height: 100vh;
+  background: #111;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.dashboard-main {
+  flex: 1;
+  padding: 2.5rem 2rem;
+  overflow-y: auto;
+}
+
+/* header */
+.dashboard-header {
+  margin-bottom: 2.5rem;
+}
+
+.dashboard-eyebrow {
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #c8a050;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.dashboard-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  font-weight: 400;
+  color: #f0ece3;
+  margin: 0;
+}
+
+.dashboard-divider {
+  width: 40px;
+  height: 1.5px;
+  background: #c8a050;
+  border-radius: 2px;
+  margin-top: 14px;
+}
+
+/* stats grid */
+.dashboard-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+
+/* stat card */
+.stat-card {
+  flex: 1 1 220px;
+  background: #1a1a1a;
+  border: 0.5px solid #2a2a2a;
+  border-radius: 18px;
+  padding: 1.75rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.stat-card:hover {
+  transform: translateY(-3px);
+  border-color: #3a3a3a;
+}
+
+.stat-card__label {
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #555;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.stat-card__value {
+  font-family: 'Playfair Display', serif;
+  font-size: 40px;
+  font-weight: 400;
+  color: #f0ece3;
+  line-height: 1;
+}
+
+.stat-card__icon-wrap {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 20px;
+}
+
+.stat-card__icon-wrap--blue {
+  background: #1a2a3a;
+  color: #7ecfee;
+}
+
+.stat-card__icon-wrap--gold {
+  background: #2c2410;
+  color: #c8a050;
+}
+
+.stat-card__icon-wrap--red {
+  background: #2a1a1a;
+  color: #f4a0a0;
+}
+@media (max-width: 900px) {
+  .dashboard-page {
+    flex-direction: column;
+  }
+
+  .dashboard-main {
+    padding: 1.5rem 1rem;
+  }
+
+  .dashboard-grid {
+    gap: 1rem;
+  }
+}

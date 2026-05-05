@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap');
+
+/* ── Card ── */
+.prop-card {
+  font-family: 'DM Sans', sans-serif;
+  background: #fff;
+  border-radius: 16px;
+  border: 1px solid #e6e0d8;
+  overflow: hidden;
+  box-shadow:
+    0 2px 4px rgba(60, 40, 20, 0.04),
+    0 8px 24px rgba(60, 40, 20, 0.07);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.prop-card:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 4px 8px rgba(60, 40, 20, 0.06),
+    0 16px 40px rgba(60, 40, 20, 0.12);
+}
+
+/* ── Image ── */
+.prop-card__img-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: #ede7dc;
+}
+
+.prop-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+  display: block;
+}
+
+.prop-card:hover .prop-card__img {
+  transform: scale(1.04);
+}
+
+/* ── Badge statut ── */
+.prop-card__badge-wrap {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+}
+
+.prop-badge {
+  display: inline-block;
+  padding: 0.28rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  backdrop-filter: blur(6px);
+}
+
+.prop-badge--vendre {
+  background: rgba(26, 20, 16, 0.82);
+  color: #f5f0e8;
+}
+
+.prop-badge--louer {
+  background: rgba(58, 96, 32, 0.85);
+  color: #e8f0e0;
+}
+
+.prop-badge--vendu {
+  background: rgba(180, 60, 40, 0.82);
+  color: #fff0ee;
+}
+
+.prop-badge--loue {
+  background: rgba(100, 80, 40, 0.82);
+  color: #fdf6e8;
+}
+
+.prop-badge--default {
+  background: rgba(60, 40, 20, 0.7);
+  color: #f5f0e8;
+}
+
+/* ── Body ── */
+.prop-card__body {
+  padding: 1.25rem 1.4rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  flex: 1;
+}
+
+.prop-card__type {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #8a7f72;
+  margin: 0;
+}
+
+.prop-card__title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: #1a1410;
+  margin: 0 0 0.25rem;
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+}
+
+.prop-card__price {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: #1a1410;
+  margin: 0.1rem 0 0.75rem;
+}
+
+.prop-card__currency {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: #8a7f72;
+}
+
+/* ── Bouton ── */
+.prop-card__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: auto;
+  padding: 0.65rem 1.1rem;
+  background: #1a1410;
+  color: #f5f0e8;
+  border-radius: 10px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.18s ease, transform 0.12s ease;
+  align-self: flex-start;
+}
+
+.prop-card__btn:hover {
+  background: #2e261d;
+  color: #f5f0e8;
+  transform: translateX(2px);
+}
+
+.prop-card__btn-arrow {
+  transition: transform 0.18s ease;
+}
+
+.prop-card__btn:hover .prop-card__btn-arrow {
+  transform: translateX(3px);
+}

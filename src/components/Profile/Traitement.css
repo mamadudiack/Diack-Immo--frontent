@@ -1,0 +1,253 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=DM+Sans:wght@300;400;500&display=swap');
+
+/* ─────────────────────────────────────────────
+   Tout est scopé sous .ct-page
+   → aucun impact sur le reste de l'application
+───────────────────────────────────────────── */
+
+.ct-page {
+  --clr-bg: #0f0f0f;
+  --clr-surface: #181818;
+  --clr-border: #2a2a2a;
+  --clr-accent: #c8102e;
+  --clr-accent-glow: rgba(200, 16, 46, 0.22);
+  --clr-green: #1a7a4a;
+  --clr-green-glow: rgba(26, 122, 74, 0.25);
+  --clr-text-primary: #f0ece4;
+  --clr-text-muted: #7a7a7a;
+  --clr-input-bg: #111111;
+  --ff-display: 'Cormorant Garamond', serif;
+  --ff-body: 'DM Sans', sans-serif;
+  --radius: 4px;
+  --transition: 0.22s ease;
+
+  min-height: 100vh;
+  background-color: var(--clr-bg);
+  background-image:
+    radial-gradient(ellipse 50% 40% at 20% 10%, rgba(200, 16, 46, 0.07) 0%, transparent 70%);
+  font-family: var(--ff-body);
+  color: var(--clr-text-primary);
+}
+
+/* ── En-tête ── */
+.ct-page .ct-header {
+  margin-bottom: 2rem;
+}
+
+.ct-page .ct-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.ct-page .ct-eyebrow::before {
+  content: '';
+  display: block;
+  width: 28px;
+  height: 1px;
+  background: var(--clr-accent);
+}
+
+.ct-page .ct-eyebrow span {
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--clr-accent);
+}
+
+.ct-page .ct-title {
+  font-family: var(--ff-display);
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 300;
+  line-height: 1.1;
+  color: var(--clr-text-primary);
+  margin: 0 0 0.5rem;
+}
+
+.ct-page .ct-title em {
+  font-style: italic;
+  color: var(--clr-accent);
+}
+
+.ct-page .ct-price {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--clr-text-primary);
+  margin: 0.25rem 0 0;
+  font-variant-numeric: tabular-nums;
+}
+
+.ct-page .ct-currency {
+  font-size: 0.85rem;
+  color: var(--clr-text-muted);
+  margin-left: 4px;
+}
+
+/* ── Alert ── */
+.ct-page .ct-alert {
+  background: rgba(59, 130, 246, 0.08) !important;
+  border: 1px solid rgba(59, 130, 246, 0.25) !important;
+  color: #93c5fd !important;
+  border-radius: var(--radius) !important;
+  font-size: 0.875rem;
+  margin-bottom: 1.25rem;
+}
+
+/* ── Badge statut ── */
+.ct-page .ct-status-badge {
+  display: inline-block !important;
+  background: rgba(234, 179, 8, 0.12) !important;
+  color: #fbbf24 !important;
+  border: 1px solid rgba(234, 179, 8, 0.3) !important;
+  border-radius: 2px !important;
+  font-family: var(--ff-body) !important;
+  font-size: 0.72rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.08em !important;
+  padding: 0.4em 0.8em !important;
+  margin-bottom: 1.25rem;
+}
+
+/* ── Card formulaire ── */
+.ct-page .ct-card {
+  background: var(--clr-surface);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius);
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+  max-width: 480px;
+}
+
+.ct-page .ct-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--clr-accent), transparent);
+  opacity: 0.5;
+}
+
+/* ── Toggle type ── */
+.ct-page .ct-type-toggle {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-bottom: 1.75rem;
+}
+
+.ct-page .ct-toggle-btn {
+  background: transparent;
+  border: none;
+  color: var(--clr-text-muted);
+  cursor: pointer;
+  font-family: var(--ff-body);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.75rem 1rem;
+  transition: background var(--transition), color var(--transition);
+}
+
+.ct-page .ct-toggle-btn:first-child {
+  border-right: 1px solid var(--clr-border);
+}
+
+.ct-page .ct-toggle-btn.active {
+  background: var(--clr-accent);
+  color: #fff;
+}
+
+.ct-page .ct-toggle-btn:not(.active):hover {
+  background: rgba(255,255,255,0.04);
+  color: var(--clr-text-primary);
+}
+
+/* ── Form groups ── */
+.ct-page .ct-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.ct-page .ct-label,
+.ct-page .form-label {
+  font-size: 0.72rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  color: var(--clr-text-muted) !important;
+  margin-bottom: 0.4rem !important;
+}
+
+/* ── Inputs date Bootstrap écrasés ── */
+.ct-page .ct-input,
+.ct-page .form-control {
+  background-color: var(--clr-input-bg) !important;
+  border: 1px solid var(--clr-border) !important;
+  border-radius: var(--radius) !important;
+  color: var(--clr-text-primary) !important;
+  font-family: var(--ff-body) !important;
+  font-size: 0.9rem !important;
+  font-weight: 300 !important;
+  padding: 0.75rem 1rem !important;
+  transition: border-color var(--transition), box-shadow var(--transition) !important;
+  color-scheme: dark;
+}
+
+.ct-page .form-control:focus {
+  border-color: var(--clr-accent) !important;
+  box-shadow: 0 0 0 3px var(--clr-accent-glow) !important;
+  background-color: var(--clr-input-bg) !important;
+}
+
+/* ── Bouton submit Bootstrap écrasé ── */
+.ct-page .ct-submit,
+.ct-page .btn-success {
+  background: var(--clr-green) !important;
+  border: none !important;
+  border-radius: var(--radius) !important;
+  font-family: var(--ff-body) !important;
+  font-size: 0.8rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  padding: 0.9rem 2rem !important;
+  position: relative;
+  overflow: hidden;
+  transition: background var(--transition), transform var(--transition), box-shadow var(--transition) !important;
+}
+
+.ct-page .ct-submit::after,
+.ct-page .btn-success::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.07) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.ct-page .ct-submit:hover,
+.ct-page .btn-success:hover {
+  background: #1e8f56 !important;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 24px rgba(26, 122, 74, 0.4) !important;
+}
+
+.ct-page .ct-submit:active,
+.ct-page .btn-success:active {
+  transform: translateY(0) !important;
+  box-shadow: none !important;
+}
+
+/* ── Responsive ── */
+@media (max-width: 480px) {
+  .ct-page .ct-card {
+    padding: 1.25rem;
+  }
+}

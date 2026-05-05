@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap');
+
+/* ── Page ── */
+.profile-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f5f2ed;
+  background-image:
+    radial-gradient(circle at 20% 20%, #e8e0d5 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, #ddd5c8 0%, transparent 50%);
+  font-family: 'DM Sans', sans-serif;
+  padding: 2rem;
+}
+
+/* ── Card ── */
+.profile-card {
+  width: 100%;
+  max-width: 520px;
+  background: #fff;
+  border-radius: 20px;
+  padding: 3rem 2.5rem 2.5rem;
+  border: 1px solid #e6e0d8;
+  box-shadow:
+    0 2px 4px rgba(60, 40, 20, 0.04),
+    0 12px 40px rgba(60, 40, 20, 0.08);
+}
+
+/* ── Header ── */
+.profile-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+/* Avatar cercle avec initiale */
+.profile-avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.9rem;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  flex-shrink: 0;
+}
+
+.profile-avatar--admin {
+  background: #1a1410;
+  color: #f5f0e8;
+}
+
+.profile-avatar--client {
+  background: #ede7dc;
+  color: #4a3828;
+}
+
+.profile-name {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #1a1410;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+/* Badge rôle */
+.profile-badge {
+  display: inline-block;
+  padding: 0.3rem 0.9rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.profile-badge--admin {
+  background: #1a1410;
+  color: #f5f0e8;
+}
+
+.profile-badge--client {
+  background: #ede7dc;
+  color: #4a3828;
+}
+
+/* ── Divider ── */
+.profile-divider {
+  height: 1px;
+  background: #e6e0d8;
+  margin-bottom: 1.75rem;
+}
+
+/* ── Champs ── */
+.profile-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.profile-row {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid #f0ebe3;
+}
+
+.profile-row:last-child {
+  border-bottom: none;
+}
+
+.profile-key {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: #8a7f72;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  min-width: 130px;
+  flex-shrink: 0;
+}
+
+.profile-value {
+  font-size: 0.9375rem;
+  color: #1a1410;
+  font-weight: 400;
+  margin: 0;
+}
+
+/* Badge type client */
+.profile-tag {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  background: #e8f0e0;
+  color: #3a6020;
+  letter-spacing: 0.02em;
+}
+
+/* ── Responsive ── */
+@media (max-width: 480px) {
+  .profile-card {
+    padding: 2.25rem 1.5rem 2rem;
+    border-radius: 16px;
+  }
+
+  .profile-name {
+    font-size: 1.4rem;
+  }
+
+  .profile-key {
+    min-width: 100px;
+  }
+
+  .profile-row {
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+}

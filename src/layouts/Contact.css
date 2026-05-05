@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=DM+Sans:wght@300;400;500&display=swap');
+
+/* ─────────────────────────────────────────────
+   Toutes les règles sont scopées sous .contact-page
+   → aucun impact sur le reste de l'application
+───────────────────────────────────────────── */
+
+.contact-page {
+  --clr-bg: #0f0f0f;
+  --clr-surface: #181818;
+  --clr-border: #2a2a2a;
+  --clr-accent: #c8a050;
+  --clr-accent-glow: rgba(200, 16, 46, 0.25);
+  --clr-text-primary: #f0ece4;
+  --clr-text-muted: #7a7a7a;
+  --clr-input-bg: #111111;
+  --ff-display: 'Cormorant Garamond', serif;
+  --ff-body: 'DM Sans', sans-serif;
+  --radius: 4px;
+  --transition: 0.25s ease;
+
+  min-height: 100vh;
+  background-color: var(--clr-bg);
+  background-image:
+    radial-gradient(ellipse 60% 50% at 70% 10%, rgba(200, 16, 46, 0.08) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 40% at 10% 80%, rgba(200, 16, 46, 0.05) 0%, transparent 60%);
+  font-family: var(--ff-body);
+  color: var(--clr-text-primary);
+}
+
+/* ── En-tête ── */
+.contact-page .contact-header {
+  margin-bottom: 2rem;
+}
+
+.contact-page .contact-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.contact-page .contact-eyebrow::before {
+  content: '';
+  display: block;
+  width: 28px;
+  height: 1px;
+  background: var(--clr-accent);
+}
+
+.contact-page .contact-eyebrow span {
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--clr-accent);
+}
+
+.contact-page .contact-title {
+  font-family: var(--ff-display);
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  font-weight: 300;
+  line-height: 1.1;
+  color: var(--clr-text-primary);
+  margin: 0;
+}
+
+.contact-page .contact-title em {
+  font-style: italic;
+  color: var(--clr-accent);
+}
+
+/* ── Card Bootstrap écrasée ── */
+.contact-page .card {
+  background: var(--clr-surface) !important;
+  border: 1px solid var(--clr-border) !important;
+  border-radius: var(--radius) !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-page .card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--clr-accent), transparent);
+  opacity: 0.6;
+  z-index: 1;
+}
+
+.contact-page .shadow-lg {
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.6) !important;
+}
+
+/* ── Labels ── */
+.contact-page .form-label {
+  font-size: 0.72rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  color: var(--clr-text-muted) !important;
+  margin-bottom: 0.4rem !important;
+}
+
+/* ── Inputs & Textarea Bootstrap écrasés ── */
+.contact-page .form-control {
+  background-color: var(--clr-input-bg) !important;
+  border: 1px solid var(--clr-border) !important;
+  border-radius: var(--radius) !important;
+  color: var(--clr-text-primary) !important;
+  font-family: var(--ff-body) !important;
+  font-size: 0.9rem !important;
+  font-weight: 300 !important;
+  padding: 0.75rem 1rem !important;
+  transition:
+    border-color var(--transition),
+    box-shadow var(--transition) !important;
+}
+
+.contact-page .form-control::placeholder {
+  color: #3a3a3a !important;
+}
+
+.contact-page .form-control:focus {
+  border-color: var(--clr-accent) !important;
+  box-shadow: 0 0 0 3px var(--clr-accent-glow) !important;
+  background-color: var(--clr-input-bg) !important;
+  color: var(--clr-text-primary) !important;
+}
+
+/* ── Bouton Bootstrap écrasé ── */
+.contact-page .btn-danger {
+  background: var(--clr-accent) !important;
+  border: none !important;
+  border-radius: var(--radius) !important;
+  font-family: var(--ff-body) !important;
+  font-size: 0.78rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.15em !important;
+  text-transform: uppercase !important;
+  padding: 0.9rem 2rem !important;
+  transition:
+    background var(--transition),
+    transform var(--transition),
+    box-shadow var(--transition) !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-page .btn-danger::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.08) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.contact-page .btn-danger:hover {
+  background: #c8a050 !important;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 24px rgba(200, 16, 46, 0.4) !important;
+}
+
+.contact-page .btn-danger:active {
+  transform: translateY(0) !important;
+  box-shadow: none !important;
+}
+
+/* ── Responsive ── */
+@media (max-width: 480px) {
+  .contact-page .card {
+    padding: 1rem !important;
+  }
+}

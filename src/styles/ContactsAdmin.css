@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap');
+
+.contacts-page {
+  display: flex;
+  min-height: 100vh;
+  background: #111;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.contacts-main {
+  flex: 1;
+  padding: 2.5rem 2rem;
+  overflow-y: auto;
+}
+
+/* header */
+.contacts-eyebrow {
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #c8a050;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.contacts-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  font-weight: 400;
+  color: #f0ece3;
+  margin: 0;
+}
+
+.contacts-divider {
+  width: 40px;
+  height: 1.5px;
+  background: #c8a050;
+  border-radius: 2px;
+  margin-top: 14px;
+  margin-bottom: 2rem;
+}
+
+/* table */
+.contacts-table-wrap {
+  background: #1a1a1a;
+  border: 0.5px solid #2a2a2a;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.contacts-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.contacts-table thead tr {
+  border-bottom: 0.5px solid #2a2a2a;
+}
+
+.contacts-table th {
+  padding: 13px 16px;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #555;
+  font-weight: 500;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.contacts-table td {
+  padding: 14px 16px;
+  color: #888;
+  font-weight: 300;
+  border-bottom: 0.5px solid #1f1f1f;
+  vertical-align: top;
+}
+
+.contacts-table tbody tr:last-child td { border-bottom: none; }
+.contacts-table tbody tr { transition: background 0.15s; }
+.contacts-table tbody tr:hover { background: #1f1f1f; }
+
+.cell-name    { color: #f0ece3; font-weight: 400; }
+.cell-email   { color: #777; }
+.cell-phone   { color: #777; white-space: nowrap; }
+.cell-message {
+  color: #888;
+  max-width: 340px;
+  line-height: 1.6;
+  font-size: 12px;
+}
+
+.cell-date {
+  white-space: nowrap;
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: #555;
+}
+
+/* empty */
+.contacts-empty {
+  text-align: center;
+  padding: 3rem;
+  color: #444;
+  font-size: 13px;
+  letter-spacing: 1px;
+}
